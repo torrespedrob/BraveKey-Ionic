@@ -1,0 +1,54 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      <a color="primary" href="/home" style="text-decoration: none; font-family: 'Pacifico', cursive;">BraveKey</a>
+    </ion-title>
+    <ion-buttons slot="end" padding>
+      <ion-button (click)="goEditBuild()">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content style="text-align: center;">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+ 
+    <ion-item *ngFor="let b of buildsService.getBuilds()">
+      <!--
+<ion-label>{{ b.name }}</ion-label>
+      <ion-icon name="pencil" (click)="goEditBuild(b.id)">
+      </ion-icon>
+      <ion-icon name="blank"></ion-icon>
+      <ion-icon name="trash" (click)="presentAlertConfirm(b)">
+      </ion-icon>
+
+
+      -->
+      <br>
+      <ion-card>
+      <img width="280px" src="{{ b.url }}"/>
+      <ion-label><strong>{{ b.name }}</strong></ion-label><br>
+      <ion-label>Keycaps: {{ b.keycaps }}</ion-label>
+      <ion-label>Switches: {{ b.switchManufacturer }}</ion-label>
+      <ion-label>Formato: {{ b.format }}</ion-label>
+      <ion-label>Valor: {{ b.value }} €</ion-label><br>
+      <ion-icon name="pencil" (click)="goEditBuild(b.id)">
+      </ion-icon>
+      <ion-icon name="blank"></ion-icon>
+      <ion-icon name="trash" (click)="presentAlertConfirm(b)">
+      </ion-icon><br></ion-card>
+      
+    </ion-item>
+
+</ion-content>

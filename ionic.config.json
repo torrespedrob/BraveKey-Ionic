@@ -1,0 +1,7 @@
+{
+  "name": "BraveKeyIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

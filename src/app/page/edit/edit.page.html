@@ -1,0 +1,69 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="builds"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Añadir o modificar build</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="floating">Nombre</ion-label>
+    <ion-input clearInput [(ngModel)]="build.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Fabricante de Switch</ion-label>
+    <ion-select interface="popover" [(ngModel)]="build.switchManufacturer">
+      <ion-select-option value="Cherry">Cherry</ion-select-option>
+      <ion-select-option value="Gateron">Gateron</ion-select-option>
+      <ion-select-option value="Kailh">Kailh</ion-select-option>
+      <ion-select-option value="Outemu">Outemu</ion-select-option>
+    </ion-select>   
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Keycaps</ion-label>
+    <ion-input clearInput [(ngModel)]="build.keycaps"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Formato</ion-label>
+    <ion-select interface="popover" [(ngModel)]="build.format">
+      <ion-select-option value="Fullsize">Fullsize</ion-select-option>
+      <ion-select-option value="TKL">TKL</ion-select-option>
+      <ion-select-option value="70%">70%</ion-select-option>
+      <ion-select-option value="60%">60%</ion-select-option>
+    </ion-select>   
+  </ion-item>
+  <ion-item style="display: inline-block;">
+    <ion-label position="floating"></ion-label><ion-toggle [(ngModel)]="build.lubed"></ion-toggle>Lubricado
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Descripción</ion-label>
+    <ion-input clearInput [(ngModel)]="build.description"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label position="floating">Url de imagen</ion-label>
+    <ion-input clearInput [(ngModel)]="build.url"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Valor</ion-label>
+    <ion-range pin min="20" max="400" step="20" value="build.value" snaps color="danger" [(ngModel)]="build.value">
+      <ion-icon slot="start" size="small" color="primary" name="ticket-outline"></ion-icon>
+      <ion-icon slot="end" color="success" name="cash-outline"></ion-icon>
+    </ion-range>
+  </ion-item> 
+  <br>
+  <ion-button (click)="saveBuild()" expand="full">
+    Guardar
+  </ion-button>
+  <p>
+    <ng-container *ngIf="build.value > 280">
+    Un teclado top.
+    </ng-container>
+  </p>   
+</ion-content>

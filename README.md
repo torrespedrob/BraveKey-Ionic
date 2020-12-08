@@ -22,7 +22,7 @@ Vamos a añadir un nuevo teclado, para ello rellenaremos los campos que nos son 
 
 Una vez completado, la app nos llevará de nuevo a nuestra colección y nos mostrará nuestro nuevo teclado.
 
-![successfullycreated]https://github.com/torrespedrob/BraveKey-Ionic/blob/main/repositorySnapshots/successfullycreated.png)
+![successfullycreated](https://github.com/torrespedrob/BraveKey-Ionic/blob/main/repositorySnapshots/successfullycreated.png)
 
 Si queremos editar un teclado ya existente, simplemente tendremos que hacer click en el botón del lápiz para editar, lo cual nos permitirá cambiar los campos que deseemos.
 
